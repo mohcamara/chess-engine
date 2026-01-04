@@ -27,7 +27,8 @@ enum PieceType {
     BISHOP,
     ROOK,
     QUEEN,
-    KING
+    KING,
+    NONE
 };
 
 enum Square {
@@ -40,4 +41,11 @@ enum Square {
     A7, B7, C7, D7, E7, F7, G7, H7,
     A8, B8, C8, D8, E8, F8, G8, H8,
     NO_SQUARE
+};
+
+struct GameState {
+    int castling_rights;
+    Square en_passant_square;
+    int halfmove_clock;
+    PieceType captured_piece; // INDISPENSABLE pour remettre la pièce mangée
 };
